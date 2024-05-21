@@ -52,7 +52,7 @@ const main = async () => {
                 let browser, page;
                 try {
                     browser = await puppeteerCore.launch({
-                        headless: false,
+                        headless: true,
                         executablePath: '/usr/bin/google-chrome', // Adjust this path according to your Chrome installation
                         args: [
                             `--disable-extensions-except=${pathToExtensionNoCaptcha},${pathToExtensionUBlock}`,
