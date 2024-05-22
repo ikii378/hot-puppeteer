@@ -87,7 +87,7 @@ const main = async () => {
                     await page.click('#section-login > div > div.w-full.mt-auto > button');
 
                     await wait(5 * 1000);
-                    await page.click('#section-home > div > div > div.block-claim.flex.flex-row.relative.z-0 > div.item-1 > div._item-1_2 > div.ml-auto.mt-3 > button > span');
+                    await page.click('#section-home > div > div > div.swiper.swiper-initialized.swiper-horizontal.mySwiper > div.swiper-wrapper > div.swiper-slide.swiper-slide-active > div > div.item-1 > div._item-1_2 > div.ml-auto.mt-3 > button > span');
 
                     await wait(5 * 1000);
                    await page.waitForSelector('#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div');
