@@ -90,9 +90,19 @@ const main = async () => {
                     await page.click('#section-home > div > div > div.block-claim.flex.flex-row.relative.z-0 > div.item-1 > div._item-1_2 > div.ml-auto.mt-3 > button > span');
 
                     await wait(5 * 1000);
-                   await page.waitForSelector('#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div');
-                   await page.click('#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div');
-                   
+                   //await page.waitForSelector('#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div');
+                   //await page.click('#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div');
+                    const selectorClaim = "#section-transaction > div.block-data.h-full > div > div.overlay.relative > div > div > div > button > div > div";
+                    const isBtnClaimAvail = await page.$(selectorClaim);
+
+                    if (isBtnClaimAvail !== null) {
+
+                        await page.waitForSelector(selectorClaim);
+
+                        await page.click(selectorClaim);
+
+                    }
+                    
                     await waitWithCountdown(21 * 60 * 1000);
                     console.log("Time's up!");
 
